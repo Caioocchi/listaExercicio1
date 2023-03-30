@@ -1,4 +1,5 @@
-package lista_de_exercicios1;
+package aula3003;
+
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -9,19 +10,28 @@ public class segundoGrau {
 		
 		System.out.println("Informe o valor de a: ");
 		Double a = sc.nextDouble();
-		
-		System.out.println("Informe o valor de b: ");
-		Double b = sc.nextDouble();
-		
-		System.out.println("Informe o valor de c: ");
-		Double c = sc.nextDouble();
-		
-		Double delta = (b*b) - 4*a*c;
-		Double x1 = (-b + Math.sqrt(delta))/2*a;
-		Double x2 = (-b - Math.sqrt(delta))/2*a;
-		
-		System.out.println("Os valores de x1 e x2, respectivamente são: "+x1+" e"+x2);
-	
+		if(a != 0){
+			System.out.println("Informe o valor de b: ");
+			Double b = sc.nextDouble();
+			
+			System.out.println("Informe o valor de c: ");
+			Double c = sc.nextDouble();
+			
+			Double delta = (b*b) - 4*a*c;
+			Double x1 = (-b + Math.sqrt(delta))/2*a;
+			Double x2 = (-b - Math.sqrt(delta))/2*a;
+			if(delta > 0){
+				System.out.println("Os valores de x1 e x2, respectivamente são: "+x1+" e"+x2);
+			}else if(delta == 0){
+				System.out.println("Os valores de x1 e x2 são iguais: "+x1+" e "+x2);
+			}else{
+				System.out.println("Delta:" +delta);
+				System.out.println("Não é possível calcular a raiz de um número negativo!");
+			}
+		}else if(a == 0){
+			System.out.println("O valor de a não pode ser zero!");
+		}
 		sc.close();
 	}
 }
+
